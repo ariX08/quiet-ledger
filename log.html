@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log a session — Quiet Ledger</title>
+  <meta name="description" content="Log a focused work session.">
+  <meta name="theme-color" content="#F7F5F0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="log">
+  <div class="site">
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a href="index.html" class="site-title">Quiet Ledger</a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="index.html">Home</a>
+          <a href="log.html" aria-current="page">Log</a>
+          <a href="history.html">History</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <h1>Log a session</h1>
+      <p class="lead">Record focused time. Keep the note short and honest if you add one.</p>
+
+      <div id="success-message" class="success-banner" hidden role="status"></div>
+
+      <form id="log-form" novalidate>
+        <div class="form-group">
+          <label for="minutes">Duration (minutes)</label>
+          <input
+            type="number"
+            id="minutes"
+            name="minutes"
+            min="1"
+            max="600"
+            step="1"
+            required
+            inputmode="numeric"
+            autocomplete="off"
+            aria-describedby="minutes-hint minutes-error"
+          >
+          <span id="minutes-hint" class="hint">Whole number, 1–600.</span>
+          <p id="minutes-error" class="field-error" hidden role="alert"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="note">Short note <span class="meta">(optional)</span></label>
+          <textarea
+            id="note"
+            name="note"
+            maxlength="500"
+            rows="3"
+            placeholder="What did you work on?"
+            aria-describedby="note-hint"
+          ></textarea>
+          <span id="note-hint" class="hint">Max 500 characters. Stored only on this device.</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Save session</button>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <p>Data stays in this browser. <a href="about.html">Privacy</a></p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiet Ledger — Home</title>
+  <meta name="description" content="A private ledger for focused work sessions. No streaks, no social, no noise.">
+  <meta name="theme-color" content="#F7F5F0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+  <div class="site">
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a href="index.html" class="site-title">Quiet Ledger</a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="log.html">Log</a>
+          <a href="history.html">History</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <h1>Today</h1>
+      <p class="lead">A private record of focused time.</p>
+
+      <div class="today-summary">
+        <p class="today-total" id="today-total">0 min</p>
+        <p class="today-label">focused so far today</p>
+      </div>
+
+      <p class="mb-5">
+        <a href="log.html" class="btn btn-primary">Log a session</a>
+      </p>
+
+      <h2>Recent</h2>
+
+      <div id="empty-state" class="empty-state" hidden>
+        <p>No sessions yet.</p>
+        <a href="log.html" class="btn btn-secondary">Log your first session</a>
+      </div>
+
+      <ul class="session-list" id="recent-list" hidden></ul>
+    </main>
+
+    <footer class="site-footer">
+      <p>Data stays in this browser. <a href="about.html">Privacy</a></p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
